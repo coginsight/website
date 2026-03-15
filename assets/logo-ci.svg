@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 60 40">
+  <!-- CI monogram with subtle brain/data hint -->
+
+  <!-- C - with organic curve feel -->
+  <path d="M18 8 A12 12 0 1 0 18 32" fill="none" stroke="#1a365d" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- I - with node dots (data feel) -->
+  <line x1="38" y1="8" x2="38" y2="32" stroke="#1a365d" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="38" cy="8" r="3" fill="#0d9488"/>
+  <circle cx="38" cy="20" r="3" fill="#0d9488"/>
+  <circle cx="38" cy="32" r="3" fill="#0d9488"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="40" viewBox="0 0 80 40">
+  <!-- EEG-style spiky wave settling into flat line + pulse -->
+  <path d="M4 20
+           L10 12 L14 28 L18 8 L22 32 L26 14 L30 24 L34 18 L38 22 L44 20
+           L64 20"
+        fill="none"
+        stroke="#1a365d"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <circle cx="70" cy="20" r="5" fill="#0d9488"/>
+</svg>

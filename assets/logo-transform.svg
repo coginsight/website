@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 36" fill="none">
+  <!-- Compact logo: Brain spiral flowing into geometric shape -->
+
+  <!-- Left: Organic spiral (brain/science) -->
+  <path d="M6,18 Q6,10 12,10 Q18,10 18,16 Q18,22 14,22 Q10,22 10,18 Q10,14 13,14"
+        stroke="#1a365d" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Arrow/flow indicator -->
+  <path d="M19,18 L24,18 M22,15 L25,18 L22,21" stroke="#64748b" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Right: Geometric diamond/data structure -->
+  <polygon points="34,8 42,18 34,28 26,18" fill="none" stroke="#1a365d" stroke-width="2"/>
+  <circle cx="34" cy="18" r="3" fill="#0d9488"/>
+  <line x1="34" y1="8" x2="34" y2="15" stroke="#0d9488" stroke-width="1.5"/>
+  <line x1="34" y1="21" x2="34" y2="28" stroke="#0d9488" stroke-width="1.5"/>
+  <line x1="26" y1="18" x2="31" y2="18" stroke="#0d9488" stroke-width="1.5"/>
+  <line x1="37" y1="18" x2="42" y2="18" stroke="#0d9488" stroke-width="1.5"/>
+</svg>

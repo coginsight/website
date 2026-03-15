@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <!-- Abstract mark: Wave becoming signal -->
+
+  <!-- Organic wave on left -->
+  <path d="M8 24 C12 12, 18 12, 22 24 C26 36, 32 36, 36 24" fill="none" stroke="#1a365d" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Output signal dot -->
+  <circle cx="40" cy="24" r="5" fill="#0d9488"/>
+</svg>

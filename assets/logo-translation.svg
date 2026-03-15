@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 40" fill="none">
+  <!-- Logo concept: Organic brain waves transforming into structured data nodes -->
+
+  <!-- Left side: Organic flowing curves (health science) -->
+  <path d="M4,12 Q8,8 10,14 Q12,20 10,26 Q8,32 4,28" stroke="#1a365d" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <path d="M9,10 Q14,6 16,14 Q18,22 16,28 Q14,34 9,30" stroke="#1a365d" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <path d="M15,8 Q20,5 22,15 Q24,25 22,32" stroke="#1a365d" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+  <!-- Center: Transition/flow lines -->
+  <line x1="24" y1="14" x2="30" y2="12" stroke="#64748b" stroke-width="1" opacity="0.6"/>
+  <line x1="24" y1="20" x2="30" y2="20" stroke="#64748b" stroke-width="1.2" opacity="0.8"/>
+  <line x1="24" y1="26" x2="30" y2="28" stroke="#64748b" stroke-width="1" opacity="0.6"/>
+
+  <!-- Right side: Structured nodes (production systems) -->
+  <!-- Grid of connected nodes -->
+  <circle cx="34" cy="12" r="2.5" fill="#0d9488"/>
+  <circle cx="44" cy="12" r="2.5" fill="#0d9488"/>
+  <circle cx="34" cy="20" r="3" fill="#1a365d"/>
+  <circle cx="44" cy="20" r="2.5" fill="#0d9488"/>
+  <circle cx="34" cy="28" r="2.5" fill="#0d9488"/>
+  <circle cx="44" cy="28" r="2.5" fill="#0d9488"/>
+
+  <!-- Node connections -->
+  <line x1="34" y1="12" x2="44" y2="12" stroke="#1a365d" stroke-width="1.2"/>
+  <line x1="34" y1="12" x2="34" y2="20" stroke="#1a365d" stroke-width="1.2"/>
+  <line x1="44" y1="12" x2="44" y2="20" stroke="#1a365d" stroke-width="1.2"/>
+  <line x1="34" y1="20" x2="44" y2="20" stroke="#1a365d" stroke-width="1.2"/>
+  <line x1="34" y1="20" x2="34" y2="28" stroke="#1a365d" stroke-width="1.2"/>
+  <line x1="44" y1="20" x2="44" y2="28" stroke="#1a365d" stroke-width="1.2"/>
+  <line x1="34" y1="28" x2="44" y2="28" stroke="#1a365d" stroke-width="1.2"/>
+  <line x1="34" y1="12" x2="44" y2="20" stroke="#0d9488" stroke-width="1" opacity="0.5"/>
+  <line x1="34" y1="20" x2="44" y2="28" stroke="#0d9488" stroke-width="1" opacity="0.5"/>
+</svg>

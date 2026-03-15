@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="36" viewBox="0 0 72 36">
+  <!-- Smooth wave dampening to a point -->
+  <path d="M4 18
+           C10 4, 14 32, 20 18
+           C24 10, 28 26, 32 18
+           C35 14, 38 22, 42 18
+           C44 16, 46 20, 50 18
+           L56 18"
+        fill="none"
+        stroke="#1a365d"
+        stroke-width="2.5"
+        stroke-linecap="round"/>
+  <circle cx="64" cy="18" r="5" fill="#0d9488"/>
+</svg>

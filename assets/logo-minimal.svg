@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+  <!-- Minimal logo: Clean overlapping circles -->
+
+  <!-- Left circle - slightly thinner -->
+  <circle cx="15" cy="20" r="13" fill="none" stroke="#1a365d" stroke-width="2"/>
+
+  <!-- Right circle -->
+  <circle cx="25" cy="20" r="13" fill="none" stroke="#1a365d" stroke-width="2"/>
+
+  <!-- Lens intersection fill -->
+  <clipPath id="lc">
+    <circle cx="15" cy="20" r="13"/>
+  </clipPath>
+  <g clip-path="url(#lc)">
+    <circle cx="25" cy="20" r="13" fill="#0d9488"/>
+  </g>
+
+  <!-- Bold intersection outline -->
+  <path d="M20,8 A13,13 0 0,1 20,32 A13,13 0 0,1 20,8" fill="none" stroke="#1a365d" stroke-width="2.5"/>
+</svg>

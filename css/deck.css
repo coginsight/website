@@ -1,0 +1,1091 @@
+/* ==========================================================================
+   Pitch Deck — Slide-specific Styles
+   Relies on styles.css for theme variables, fonts, and base components
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Slide Layout & Scroll Snap
+   -------------------------------------------------------------------------- */
+
+html.deck {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.slide {
+    min-height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-12) var(--space-16);
+    position: relative;
+}
+
+.slide-inner {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Slide Header (logo + slide number)
+   -------------------------------------------------------------------------- */
+
+.deck-logo {
+    position: fixed;
+    top: var(--space-6);
+    right: var(--space-6);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    opacity: 0.7;
+    transition: opacity var(--transition-fast);
+}
+
+.deck-logo:hover {
+    opacity: 1;
+}
+
+.deck-logo-img {
+    height: 24px;
+    width: auto;
+}
+
+.deck-logo-text {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    letter-spacing: -0.01em;
+}
+
+/* --------------------------------------------------------------------------
+   Progress Bar
+   -------------------------------------------------------------------------- */
+
+.deck-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    z-index: 200;
+    transition: width 0.3s ease;
+}
+
+/* --------------------------------------------------------------------------
+   Navigation Dots
+   -------------------------------------------------------------------------- */
+
+.deck-nav {
+    position: fixed;
+    right: var(--space-6);
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    z-index: 100;
+}
+
+.deck-nav-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-text-light);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all var(--transition-fast);
+    opacity: 0.4;
+}
+
+.deck-nav-dot:hover {
+    opacity: 0.7;
+    transform: scale(1.3);
+}
+
+.deck-nav-dot.active {
+    background: var(--color-primary);
+    opacity: 1;
+    transform: scale(1.3);
+}
+
+/* --------------------------------------------------------------------------
+   Title Slide
+   -------------------------------------------------------------------------- */
+
+.slide-title {
+    text-align: center;
+    background: var(--gradient-hero);
+}
+
+.slide-title .hero-title {
+    font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: var(--space-8);
+}
+
+.slide-title .hero-tags {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.title-logo {
+    width: 280px;
+    max-width: 60vw;
+    margin: 0 auto var(--space-4);
+}
+
+.title-company-name {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-8);
+}
+
+/* --------------------------------------------------------------------------
+   Section Label (gradient pill)
+   -------------------------------------------------------------------------- */
+
+.deck-highlight {
+    color: var(--color-accent);
+}
+
+.slide-label {
+    display: inline-block;
+    padding: var(--space-1) var(--space-3);
+    background: var(--gradient-primary);
+    color: white;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: var(--border-radius-full);
+    margin-bottom: var(--space-6);
+}
+
+.slide-heading {
+    font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
+    font-weight: 800;
+    margin-bottom: var(--space-4);
+}
+
+.slide-subheading {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-muted);
+    max-width: 700px;
+    margin-bottom: var(--space-8);
+}
+
+/* --------------------------------------------------------------------------
+   Problem Slide — Gap Table
+   -------------------------------------------------------------------------- */
+
+.gap-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    background: var(--color-surface);
+    box-shadow: var(--shadow);
+}
+
+.gap-table thead th {
+    padding: var(--space-4) var(--space-6);
+    background: var(--color-surface-alt);
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: left;
+    border-bottom: 2px solid var(--color-border);
+}
+
+.gap-table thead th:last-child {
+    color: var(--color-primary);
+}
+
+.gap-table tbody td {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.gap-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.gap-table tbody td:last-child {
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.gap-table tbody tr:hover {
+    background: var(--color-surface-alt);
+}
+
+.problem-gaps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+}
+
+.problem-gap {
+    padding: var(--space-6);
+    background: var(--color-surface);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.problem-gap-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto var(--space-4);
+    background: var(--color-surface-alt);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+}
+
+.problem-gap-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+}
+
+.problem-gap-desc {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+    .problem-gaps {
+        grid-template-columns: 1fr;
+    }
+}
+
+.gap-result-big {
+    text-align: center;
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-top: var(--space-10);
+}
+
+.gap-result {
+    margin-top: var(--space-6);
+    padding: var(--space-4) var(--space-6);
+    background: var(--color-surface);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--border-radius);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-base);
+}
+
+.gap-result strong {
+    color: var(--color-text);
+}
+
+/* --------------------------------------------------------------------------
+   Solution Slide — Dual Pillar
+   -------------------------------------------------------------------------- */
+
+.pillars {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: var(--space-6);
+    align-items: stretch;
+    margin-bottom: var(--space-8);
+}
+
+.pillar {
+    padding: var(--space-8);
+    background: var(--color-surface);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.pillar-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    color: var(--color-primary);
+}
+
+.pillar-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    flex: 1;
+}
+
+.pillar-item {
+    font-size: var(--font-size-base);
+    color: var(--color-text-muted);
+    padding-left: var(--space-5);
+    position: relative;
+}
+
+.pillar-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background: var(--color-accent);
+    border-radius: 50%;
+}
+
+.pillar-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-3xl);
+    font-weight: 300;
+    color: var(--color-text-light);
+}
+
+.shared-foundation {
+    padding: var(--space-6);
+    background: var(--color-surface-alt);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--color-border);
+    text-align: center;
+}
+
+.shared-foundation-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+    color: var(--color-accent);
+}
+
+.shared-tags {
+    display: flex;
+    gap: var(--space-2);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.shared-tag {
+    padding: var(--space-1) var(--space-3);
+    background: var(--color-surface);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xs);
+    border-radius: var(--border-radius-full);
+    border: 1px solid var(--color-border);
+}
+
+.solution-cta {
+    text-align: center;
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-accent);
+    line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   Capabilities Slide — 4 Cards
+   -------------------------------------------------------------------------- */
+
+.deck-capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+}
+
+.deck-capability-card {
+    padding: var(--space-6);
+    background: var(--color-surface);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+}
+
+.deck-capability-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--gradient-primary);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: var(--space-4);
+}
+
+.deck-capability-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+}
+
+.deck-capability-desc {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   Differentiators Slide — Comparison Table
+   -------------------------------------------------------------------------- */
+
+.diff-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    background: var(--color-surface);
+    box-shadow: var(--shadow);
+    margin-bottom: var(--space-8);
+}
+
+.diff-table thead th {
+    padding: var(--space-4) var(--space-6);
+    background: var(--color-surface-alt);
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    text-align: left;
+    border-bottom: 2px solid var(--color-border);
+}
+
+.diff-table thead th:first-child {
+    width: 20%;
+}
+
+.diff-table thead th:last-child {
+    color: var(--color-primary);
+}
+
+.diff-table tbody td {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.diff-table tbody td:first-child {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.diff-table tbody td:last-child {
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.diff-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.diff-table tbody tr:hover {
+    background: var(--color-surface-alt);
+}
+
+.track-badges {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.track-badge {
+    padding: var(--space-3) var(--space-6);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-accent);
+    box-shadow: var(--shadow-sm);
+}
+
+/* --------------------------------------------------------------------------
+   Team Slide — Stats Bar
+   -------------------------------------------------------------------------- */
+
+.team-stats {
+    display: flex;
+    gap: var(--space-10);
+    justify-content: center;
+    margin-bottom: var(--space-8);
+    flex-wrap: wrap;
+}
+
+.team-stat {
+    text-align: center;
+}
+
+.team-stat-number {
+    font-size: var(--font-size-4xl);
+    font-weight: 800;
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: var(--space-2);
+}
+
+.team-stat-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.team-accomplishments {
+    max-width: 800px;
+    margin: 0 auto var(--space-8);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+}
+
+.team-accomplishment {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    padding: var(--space-4);
+    background: var(--color-surface);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.team-accomplishment::before {
+    content: '';
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    margin-top: 6px;
+    background: var(--color-accent);
+    border-radius: 50%;
+}
+
+.team-logos {
+    display: flex;
+    gap: var(--space-8);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    opacity: 0.6;
+}
+
+.team-logo-text {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   Clients Slide — 5 Cards
+   -------------------------------------------------------------------------- */
+
+.deck-clients-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.deck-client-card {
+    padding: var(--space-8);
+    background: var(--color-surface);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-5);
+    text-align: left;
+}
+
+.deck-client-icon {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    background: var(--color-surface-alt);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+}
+
+.deck-client-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+}
+
+.deck-client-desc {
+    font-size: var(--font-size-base);
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+.clients-also {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-8);
+    padding: var(--space-4) var(--space-6);
+    background: var(--color-surface);
+    border-radius: var(--border-radius-full);
+    box-shadow: var(--shadow-sm);
+}
+
+.clients-also-label {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-right: var(--space-2);
+}
+
+.clients-also-item {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+.clients-also-sep {
+    color: var(--color-text-light);
+}
+
+/* --------------------------------------------------------------------------
+   How We Work — 3-Phase Flow
+   -------------------------------------------------------------------------- */
+
+.phase-flow {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    gap: var(--space-4);
+    align-items: start;
+}
+
+.phase {
+    padding: var(--space-6);
+    background: var(--color-surface);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.phase-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--gradient-primary);
+    color: white;
+    font-weight: 700;
+    border-radius: 50%;
+    margin-bottom: var(--space-3);
+}
+
+.phase-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+}
+
+.phase-duration {
+    font-size: var(--font-size-base);
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-bottom: var(--space-4);
+}
+
+.phase-items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    text-align: left;
+}
+
+.phase-item {
+    font-size: var(--font-size-base);
+    color: var(--color-text-muted);
+    padding-left: var(--space-5);
+    position: relative;
+}
+
+.phase-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    background: var(--color-accent);
+    border-radius: 50%;
+}
+
+.phase-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-light);
+    font-size: var(--font-size-2xl);
+    padding-top: var(--space-8);
+}
+
+.phase-cta {
+    text-align: center;
+    margin-top: var(--space-8);
+    font-size: var(--font-size-base);
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+.phase-cta strong {
+    color: var(--color-text);
+    font-style: normal;
+}
+
+/* --------------------------------------------------------------------------
+   Case Study Slides
+   -------------------------------------------------------------------------- */
+
+.case-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-10);
+    align-items: center;
+}
+
+.case-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.case-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.case-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.case-desc {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+}
+
+.case-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.case-highlight {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+.case-highlight-icon {
+    flex-shrink: 0;
+    color: var(--color-accent);
+    margin-top: 2px;
+}
+
+.case-link {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
+}
+
+.case-link:hover {
+    opacity: 0.7;
+}
+
+.case-image {
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-xl);
+    width: 100%;
+    height: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Why Now — Stat Cards
+   -------------------------------------------------------------------------- */
+
+.why-now-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+}
+
+.why-now-card {
+    padding: var(--space-6);
+    background: var(--color-surface);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+}
+
+.why-now-title {
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+    color: var(--color-primary);
+}
+
+.why-now-desc {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+.why-now-cta {
+    text-align: center;
+    padding: var(--space-6);
+    background: var(--color-surface);
+    border-radius: var(--border-radius-lg);
+    border: 2px solid var(--color-primary);
+}
+
+.why-now-cta p {
+    font-size: var(--font-size-base);
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+.why-now-cta strong {
+    color: var(--color-text);
+}
+
+/* --------------------------------------------------------------------------
+   CTA Slide
+   -------------------------------------------------------------------------- */
+
+.slide-cta {
+    text-align: center;
+    background: var(--gradient-hero);
+}
+
+.cta-title {
+    font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
+    font-weight: 800;
+    margin-bottom: var(--space-6);
+}
+
+.cta-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-8);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-email {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-8);
+    background: var(--gradient-primary);
+    color: white;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    border-radius: var(--border-radius-full);
+    box-shadow: var(--shadow-lg);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    text-decoration: none;
+}
+
+.cta-email:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+.cta-tagline {
+    margin-top: var(--space-8);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+}
+
+/* --------------------------------------------------------------------------
+   Keyboard Hint
+   -------------------------------------------------------------------------- */
+
+.deck-hint {
+    position: fixed;
+    bottom: var(--space-6);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: var(--space-2) var(--space-4);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-light);
+    z-index: 100;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.deck-hint.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.deck-hint kbd {
+    padding: 2px 6px;
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    font-family: var(--font-family);
+    font-size: var(--font-size-xs);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+    .pillars {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .pillar-connector {
+        transform: rotate(90deg);
+        padding: 0;
+    }
+
+    .phase-flow {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .phase-arrow {
+        transform: rotate(90deg);
+        padding: 0;
+    }
+
+    .case-layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+
+    .case-image {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .deck-capabilities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-now-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .slide {
+        padding: var(--space-8) var(--container-padding);
+    }
+
+    .deck-nav {
+        display: none;
+    }
+
+    .team-stats {
+        gap: var(--space-4);
+    }
+
+    .team-stat-number {
+        font-size: var(--font-size-3xl);
+    }
+
+    .track-badges {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .deck-clients-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Print Styles
+   -------------------------------------------------------------------------- */
+
+@media print {
+    html.deck {
+        scroll-snap-type: none;
+    }
+
+    .slide {
+        min-height: auto;
+        page-break-after: always;
+        page-break-inside: avoid;
+        padding: 1cm;
+    }
+
+    .deck-logo,
+    .deck-progress,
+    .deck-nav,
+    .deck-hint {
+        display: none !important;
+    }
+
+    .slide-title,
+    .slide-cta {
+        background: none !important;
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+    }
+
+    .gap-table,
+    .diff-table,
+    .pillar,
+    .phase,
+    .deck-capability-card,
+    .deck-client-card,
+    .why-now-card,
+    .shared-foundation {
+        box-shadow: none !important;
+        border: 1px solid #ddd;
+    }
+}

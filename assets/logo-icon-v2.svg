@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+  <!-- Square icon: Compact translation concept -->
+
+  <!-- Organic curve on left (brain/wave) -->
+  <path d="M6,20 Q10,8 14,20 Q18,32 22,20" stroke="#1a365d" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Small connecting dots -->
+  <circle cx="22" cy="20" r="1.5" fill="#64748b"/>
+  <circle cx="26" cy="20" r="1.5" fill="#64748b"/>
+
+  <!-- Structured hexagon with node (production) -->
+  <polygon points="33,12 39,16 39,24 33,28 27,24 27,16" fill="none" stroke="#1a365d" stroke-width="2"/>
+  <circle cx="33" cy="20" r="3.5" fill="#0d9488"/>
+</svg>

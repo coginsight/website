@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="40" viewBox="0 0 120 40">
+  <!-- Simple: Brain outline + arrow + cube -->
+
+  <!-- Brain (simplified) -->
+  <ellipse cx="15" cy="20" rx="12" ry="14" fill="none" stroke="#1a365d" stroke-width="2"/>
+  <path d="M15 6 L15 34" stroke="#1a365d" stroke-width="1.5"/>
+  <path d="M8 14 Q15 18 22 14" stroke="#1a365d" stroke-width="1.5" fill="none"/>
+  <path d="M8 26 Q15 22 22 26" stroke="#1a365d" stroke-width="1.5" fill="none"/>
+
+  <!-- Arrow -->
+  <path d="M32 20 L48 20 M44 16 L48 20 L44 24" stroke="#0d9488" stroke-width="2" fill="none"/>
+
+  <!-- Data/System (simple cube) -->
+  <rect x="54" y="10" width="20" height="20" fill="none" stroke="#1a365d" stroke-width="2"/>
+  <circle cx="64" cy="20" r="4" fill="#0d9488"/>
+</svg>
